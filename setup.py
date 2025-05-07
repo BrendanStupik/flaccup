@@ -18,7 +18,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="flaccup",
-    version=1.0.0,
+    version="1.0.0",
     author="Brendan Stupik",
     author_email="flaccup@brendanstupik.anonaddy.com",
     description="FLAC Integrity Checker and Backup Utility",
