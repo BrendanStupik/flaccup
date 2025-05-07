@@ -23,7 +23,7 @@
         * **Integrity Check:** `flac -t` is run.
         * **MD5 Checksum:** The audio MD5 is generated using `metaflac`. This new MD5 is compared against any previously stored MD5 to detect changes.
     * The database is updated with the latest scan results, MD5 checksum, and scan date.
-3.  **Backup:** If a file passes the integrity check and its MD5 checksum is unchanged (or it's a new, healthy file), it is backed up to the backup destination using `rsync`.
+3.  **Backup:** If a file passes the integrity check and its MD5 checksum is unchanged (or it's a new, healthy file), it's copied (after comparing SHA256-sums) to the backup destination using `rsync`.
 4.  **Logging:** All actions, errors, and summaries are logged to a timestamped file in the configured log directory.
 5.  **Scheduler (`Flaccup.scheduler`):** This separate utility helps manage the scan workload. When run (e.g., `python -m flaccup.scheduler --frequency weekly`), it:
     * Updates the `RESCAN_DAYS_THRESHOLD` in your `flaccup_config.ini` based on the chosen frequency.
